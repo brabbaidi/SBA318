@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/static/styles.css')
+  body
+    h1= title
+    ul
+      each book in books
+        li
+          strong= book.title
+          |  by
+          em= book.author
+          form(action=`/books/${book.id}/delete`, method='POST')
+            button(type='submit') Delete
+    a(href='/') Add a New Book

@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/static/styles.css')
+  body
+    h1= message
+    form(action='/books', method='POST')
+      div
+        label(for='title') Title:
+        input(type='text', name='title', required)
+      div
+        label(for='author') Author:
+        input(type='text', name='author', required)
+      div
+        button(type='submit') Add Book
